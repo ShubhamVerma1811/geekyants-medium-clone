@@ -2,7 +2,7 @@ import { delay, put, takeLatest } from 'redux-saga/effects';
 
 export function* incrementAsync() {
   yield delay(3000);
-  console.log('HI')
+  console.log('HI');
 }
 
 export function* watchIncrementAsyc() {
