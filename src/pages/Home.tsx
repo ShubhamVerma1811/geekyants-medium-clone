@@ -1,25 +1,15 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import PageLayout from '../layouts/PageLayout/PageLayout'
-import { decrement, increment } from '../store/counter'
+import { CenterLayout, PageLayout } from '../layouts'
 
 export const Home = () => {
-  const counter = useSelector((state) => state.counter)
-  const dispatch = useDispatch()
-
   return (
     <PageLayout>
-      <div>
-        This is is the home page
+      <CenterLayout>
         <div>
-          <span>And this the value in redux store</span>
-          <div>
-            <button onClick={() => dispatch(increment())}>Increment</button>
-            <p className='text-xl'>{counter}</p>
-            <button onClick={() => dispatch(decrement())}>Decrement</button>
-          </div>
+          This is is the home page. Recent Posts and Trending tags are showing
+          here.
         </div>
-      </div>
+      </CenterLayout>
     </PageLayout>
   )
 }

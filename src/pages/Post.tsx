@@ -10,7 +10,10 @@ export const Post = ({ match }: { match: MatchProps }) => {
   return (
     <PageLayout>
       <CenterLayout>
-        <div>This post is called {match.params.pid}, Written By {match.params.username}</div>
+        <div>
+          This post is called {match.params.pid}, Written By{' '}
+          {match.params.username}
+        </div>
       </CenterLayout>
     </PageLayout>
   )
