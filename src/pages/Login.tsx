@@ -1,10 +1,12 @@
 import React from 'react'
-import PageLayout from '../layouts/PageLayout/PageLayout'
+import { CenterLayout, PageLayout } from '../layouts'
 
 export const Login = () => {
   return (
     <PageLayout>
-      <div>This is the login page</div>
+      <CenterLayout>
+        <div>This is the login page</div>
+      </CenterLayout>
     </PageLayout>
   )
 }

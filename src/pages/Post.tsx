@@ -1,6 +1,6 @@
 import React from 'react'
 import type { RouteComponentProps } from 'react-router-dom'
-import PageLayout from '../layouts/PageLayout/PageLayout'
+import { CenterLayout, PageLayout } from '../layouts'
 
 type MatchProps = RouteComponentProps & {
   params: any
@@ -9,7 +9,9 @@ type MatchProps = RouteComponentProps & {
 export const Post = ({ match }: { match: MatchProps }) => {
   return (
     <PageLayout>
-      <div>This is the post page for post_id : {match.params.pid}</div>
+      <CenterLayout>
+        <div>This post is called {match.params.pid}, Written By {match.params.username}</div>
+      </CenterLayout>
     </PageLayout>
   )
 }

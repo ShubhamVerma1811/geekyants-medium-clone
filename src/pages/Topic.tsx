@@ -1,6 +1,6 @@
 import React from 'react'
 import type { RouteComponentProps } from 'react-router-dom'
-import PageLayout from '../layouts/PageLayout/PageLayout'
+import { CenterLayout, PageLayout } from '../layouts'
 
 type MatchProps = RouteComponentProps & {
   params: any
@@ -9,7 +9,9 @@ type MatchProps = RouteComponentProps & {
 export const Topic = ({ match }: { match: MatchProps }) => {
   return (
     <PageLayout>
-      <div>This is the Topics Page for {match.params.topic_name}</div>
+      <CenterLayout>
+        <div>This is the Topics Page for {match.params.topic_name}</div>
+      </CenterLayout>
     </PageLayout>
   )
 }
