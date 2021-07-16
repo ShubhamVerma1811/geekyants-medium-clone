@@ -1,1 +1,1 @@
-# React - TS - Redux - Saga - Persist - Tailwind Boilerplate
+# Medium Clone made using React, TypeScript, Redux, Saga and Tailwind
