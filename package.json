@@ -3,11 +3,11 @@
     "dev": "snowpack dev",
     "build": "snowpack build",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "format:full": "prettier --write .",
     "lint": "prettier --check \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.0",
-    "firebase": "^8.7.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
@@ -26,6 +26,10 @@
     "@types/react-redux": "^7.1.18",
     "@types/react-router-dom": "^5.1.8",
     "@types/snowpack-env": "^2.3.3",
+    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/parser": "^4.28.3",
+    "eslint": "^7.30.0",
+    "eslint-plugin-react": "^7.24.0",
     "postcss": "^8.3.5",
     "prettier": "^2.2.1",
     "snowpack": "^3.3.7",

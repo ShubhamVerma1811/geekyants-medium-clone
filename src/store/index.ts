@@ -1,5 +1,5 @@
-import createSagaMiddleware from '@redux-saga/core';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import createSagaMiddleware from '@redux-saga/core'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {
   FLUSH,
   PAUSE,
@@ -9,19 +9,19 @@ import {
   PURGE,
   REGISTER,
   REHYDRATE,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-import counter from './counter';
-import { incrementAsync } from './sagas/saga';
+} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import counter from './counter'
+import { incrementAsync } from './sagas/saga'
 
 const rootReducer = combineReducers({
   counter,
-});
+})
 
-const persistConfig = { key: 'root', version: 1, storage };
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+const persistConfig = { key: 'root', version: 1, storage }
+const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-const sageMiddleware = createSagaMiddleware();
+const sageMiddleware = createSagaMiddleware()
 
 export const store = configureStore({
   reducer: persistedReducer,
@@ -31,8 +31,8 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }).concat(sageMiddleware),
-});
+})
 
-export const persistor = persistStore(store);
+export const persistor = persistStore(store)
 
-sageMiddleware.run(incrementAsync);
+sageMiddleware.run(incrementAsync)

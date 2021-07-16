@@ -1,5 +1,5 @@
-import React from 'react';
-import Navbar from '../../components/Navbar/Navbar';
+import React from 'react'
+import Navbar from '../../components/Navbar/Navbar'
 
 const PageLayout = ({ children }) => {
   return (
@@ -7,7 +7,7 @@ const PageLayout = ({ children }) => {
       <Navbar />
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default PageLayout;
+export default PageLayout

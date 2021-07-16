@@ -1,11 +1,11 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import PageLayout from '../layouts/PageLayout/PageLayout';
-import { decrement, increment } from '../store/counter';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import PageLayout from '../layouts/PageLayout/PageLayout'
+import { decrement, increment } from '../store/counter'
 
 export const Home = () => {
-  const counter = useSelector((state) => state.counter);
-  const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter)
+  const dispatch = useDispatch()
 
   return (
     <PageLayout>
@@ -21,7 +21,7 @@ export const Home = () => {
         </div>
       </div>
     </PageLayout>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

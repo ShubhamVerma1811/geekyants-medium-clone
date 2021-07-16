@@ -1,6 +1,6 @@
-import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, Login, Post, Signup, Topic } from './pages';
+import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Home, Login, Post, Signup, Topic } from './pages'
 
 interface AppProps {}
 function App({}: AppProps) {
@@ -15,7 +15,7 @@ function App({}: AppProps) {
       </Switch>
        
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App
