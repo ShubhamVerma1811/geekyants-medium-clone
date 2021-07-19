@@ -1,4 +1,5 @@
 import React from 'react'
+import PostEditor from '../components/PostEditor/PostEditor'
 import { CenterLayout, PageLayout } from '../layouts'
 
 export const Write = () => {
@@ -6,7 +7,7 @@ export const Write = () => {
     <div>
       <PageLayout>
         <CenterLayout>
-          This is the Page to Write a post. It should be protected
+          <PostEditor />
         </CenterLayout>
       </PageLayout>
     </div>
