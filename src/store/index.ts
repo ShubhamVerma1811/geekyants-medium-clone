@@ -12,10 +12,12 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import counter from './counter'
+import authUser from './authUser'
 import { incrementAsync } from './sagas/saga'
 
 const rootReducer = combineReducers({
   counter,
+  authUser,
 })
 
 const persistConfig = { key: 'root', version: 1, storage }

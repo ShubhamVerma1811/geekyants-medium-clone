@@ -1,8 +1,16 @@
 import { useFormik } from 'formik'
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import * as Yup from 'yup'
+import {
+  handleSignIn,
+  handleSignUp,
+} from '../../services/authenticationServices'
+import { setAuthUser } from '../../store/authUser'
 
 const LogInForm = () => {
+  const dispatch = useDispatch()
+
   const { values, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: '',
@@ -10,12 +18,11 @@ const LogInForm = () => {
     },
     validationSchema: Yup.object({
       email: Yup.string().email('Enter valid email').required('Email Required'),
-      password: Yup.string()
-        .min(6, 'Minimum of 6 characters')
-        .required('Password Required'),
+      password: Yup.string().required('Password Required'),
     }),
-    onSubmit: ({ email, password }) => {
-      console.log('Submitting Form', { email, password })
+    onSubmit: async ({ email, password }) => {
+      const resp = await handleSignIn(email, password)
+      dispatch(setAuthUser(resp))
       return
     },
   })
@@ -77,8 +84,10 @@ const SignUpForm = () => {
       username: Yup.string().required('Username Required'),
       name: Yup.string().required('Name Required'),
     }),
-    onSubmit: ({ email, password, name, username }) => {
-      console.log('Submitting Form', { email, password, name, username })
+    onSubmit: async ({ email, password, name, username }) => {
+      const resp = await handleSignUp(email, password, name, username)
+      console.log(resp)
+
       return
     },
   })
