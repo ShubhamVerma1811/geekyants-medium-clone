@@ -1,5 +1,6 @@
 import React from 'react'
 import type { RouteComponentProps } from 'react-router-dom'
+import Blog from '../components/Blog/Blog'
 import { CenterLayout, PageLayout } from '../layouts'
 
 type MatchProps = RouteComponentProps & {
@@ -11,8 +12,7 @@ export const Post = ({ match }: { match: MatchProps }) => {
     <PageLayout>
       <CenterLayout>
         <div>
-          This post is called {match.params.pid}, Written By{' '}
-          {match.params.username}
+          <Blog />
         </div>
       </CenterLayout>
     </PageLayout>
